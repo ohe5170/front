@@ -1,5 +1,4 @@
-console.log(document.getElementById("delete-draft-button"));
-
+// 마감임박 js
 const tabContainer = document.querySelector(".Tab__TabContainer");
 const allBtn = document.querySelector(".entire__Button");
 const bargainBtn = document.querySelector(".deadline__Button");
@@ -30,7 +29,7 @@ allBtn.addEventListener("click", (e) => {
         card.style.display = "";
     });
 });
-
+// 작성 중 상품 js
 const trashcanBtn = document.getElementById("delete-draft-button");
 const cancelBtn = document.getElementById("cancelModal");
 const deleteBtn = document.getElementById("confirmDelete");

@@ -1,34 +1,15 @@
-const arrowWrappers = document.querySelectorAll(
-    ".ReviewKeywordItem__IconWrapper",
-);
+const wrappers = document.querySelectorAll(".Review__Wrapper");
 
-arrowWrappers.forEach((wrapper) => {
+wrappers.forEach((wrapper) => {
     wrapper.addEventListener("click", function () {
-        const container = this.closest(
-            ".ReviewKeywordItem__ReviewKeywordItemWrapper",
-        );
+        const isOpen = this.style.maxHeight !== "34px";
 
-        const svgIcon = this.querySelector("svg");
+        wrappers.forEach((w) => {
+            w.style.maxHeight = "34px";
+        });
 
-        if (!container) return;
-
-        // 펼쳐져 있으면 접기
-        if (container.classList.contains("gdLZFN")) {
-            container.classList.remove("gdLZFN");
-            container.classList.add("jZeOxh");
-            if (svgIcon) svgIcon.style.transform = "rotate(0deg)";
+        if (!isOpen) {
+            this.style.maxHeight = this.scrollHeight + "px";
         }
-        // 접혀 있으면 펼치기
-        else {
-            container.classList.remove("jZeOxh");
-            container.classList.add("gdLZFN");
-            if (svgIcon) svgIcon.style.transform = "rotate(180deg)";
-        }
-    });
-});
-
-arrowWrappers.forEach((wrapper) => {
-    wrapper.addEventListener("click", function () {
-        console.log("클릭됨", this);
     });
 });
